@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function App() {
+	const [value, setValue] = useState(0)
 	return (
 		<div>
-			<h1>Lorem ipsum dolor sit amet.</h1>
+			<h1>{value}</h1>
 		</div>
 	)
 }

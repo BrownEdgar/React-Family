@@ -1,75 +1,30 @@
-import { useState } from 'react'
+import React, {useState, useEffect} from 'react'
+import Posts from './Posts'
 
+export default function App() {
+	const [data, setData] = useState([])
 
-function App() {
-	const [people, setPeople] = useState([
-		{ id: 1, name: 'Wes', year: 1988 },
-		{ id: 2, name: 'Kait', year: 1986 },
-		{ id: 3, name: 'Eleonor', year: 1970 },
-		{ id: 4, name: 'Lux', year: 2015 }
-	]);
-	const [result, setResult] = useState('')
+	useEffect(() => {
 
+		const getdata = () => {
+			fetch('https://jsonplaceholder.typicode.com/posts')
+				.then(response => response.json())
+				.then(json => setData(json))
+		}
+	
+		getdata()
+	},[])
 
-	const oneClick = () => {
-		const salary = people.map(elem => ({ ...elem, salary: Math.trunc(Math.random() * 650000 + 150000) }))
-		setPeople(salary)
-	}
-
-	const twoClick = () => {
-    const age = people.every(elem => {
-      const age1 = new Date().getFullYear() - elem.year;
-      return age1 == 34;
-    })
-    setResult(age ?"YES" :"NO")
-  	}
-
-	const threeClick = () => {
-
-	const age = people.some(elem => {
-    const age1 = new Date().getFullYear() - elem.year;
-    return age1 > 19;
-  	})
-  	setResult(age ?"YES" :"NO")
-  	}
-
-	const fourClick = () => {
-		const getHer = people.map((elem) => {
-			if (elem.name == 'Eleonor') {
-				return { ...elem, year: 1986 }
-			}
-			return elem
-			
-		})
-		setPeople(getHer)
-	}
-
-	const fiveClick = () => {
-		const arr = people
-		.filter((elem) => elem.salary >= 500000)
-		.map(elem => elem.name)
-		setResult(arr)
-	}
-
-	const sixClick = () => {
-		const richest = people.reduce((a, b) => {
-			return b.salary > a.salary ? b : a
-		})
-		setResult("Riches is: " + richest.name)
-	}
-
+	const deleteFunc = (id) => {
+		const del = data.filter(elem => elem.id !== id);
+		setData(del);
+	  };
+	
 	return (
-		<>
-			<h1>{JSON.stringify(people)}</h1>
-			<h2>{result}</h2>
-			<button onClick={oneClick} >oneClick</button>
-			<button onClick={twoClick} >twoClick</button>
-			<button onClick={threeClick} >threeClick</button>
-			<button onClick={fourClick} >fourClick</button>
-			<button disabled={people.salary} onClick={fiveClick} >fiveClick</button>
-			<button disabled={people.salary} onClick={sixClick} >sixClick</button>
-		</>
+		<div>
+			<h1>Fetch in react</h1>
+			<button>get data</button>
+			<Posts posts={data} deleteFunc={deleteFunc}/>
+		</div>
 	)
 }
-
-export default App

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Posts from './Posts'
 
 export default function App() {
@@ -6,11 +6,11 @@ export default function App() {
 	useEffect(() => {
 		const getdata = () => {
 			fetch('https://jsonplaceholder.typicode.com/posts')
-			    .then(response => response.json())
+				.then(response => response.json())
 				.then(json => setData(json))
 		}
 		getdata()
-	},[])
+	}, [])
 	const deleteById = (id) => {
 		const result = data.filter(elem => elem.id !== id)
 		setData(result)
@@ -18,7 +18,7 @@ export default function App() {
 	return (
 		<div>
 			<h1>Fetch in react</h1>
-			<Posts posts={data} deleteById={deleteById}/>
+			<Posts posts={data} deleteById={deleteById} />
 		</div>
 	)
 }

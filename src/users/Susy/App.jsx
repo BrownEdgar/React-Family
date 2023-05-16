@@ -17,26 +17,21 @@ function App() {
 	}
 
 	const twoClick = () => {
-	// լուծումը թարմացնել
-
-	}
+    const age = people.every(elem => {
+      const age1 = new Date().getFullYear() - elem.year;
+      return age1 == 34;
+    })
+    setResult(age ?"YES" :"NO")
+  	}
 
 	const threeClick = () => {
 
-		// փոխել
-		let flag;
-		const arr1 = people.map(elem => new Date().getFullYear() - elem.year)
-		for (let i = 0; i < arr1.length; i++) {
-			if (arr1[i] >= 19) {
-				setResult("YES");
-				flag = true;
-				break;
-			}
-		}
-		if (!flag) {
-			setResult("NO");
-		}
-	}
+	const age = people.some(elem => {
+    const age1 = new Date().getFullYear() - elem.year;
+    return age1 > 19;
+  	})
+  	setResult(age ?"YES" :"NO")
+  	}
 
 	const fourClick = () => {
 		const getHer = people.map((elem) => {

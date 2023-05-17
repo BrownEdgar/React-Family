@@ -8,7 +8,7 @@ export default function Component(props) {
             {
                 props.data.map(elem => {
                     return (
-                        <div key={elem.id} className='flex__item' onClick={() => props.change(elem.id)}>
+                        <div key={elem.id} className='flex__item' onClick={() => props.changed(elem.id)}>
                             <h2>{elem.title}</h2>
                             <span className={`flex__status ${elem.completed ? 'flex__status-success' : 'flex__status-failure'}`}></span>
                         </div>
@@ -29,5 +29,5 @@ Component.propTypes = {
             }
         )
     ),
-    change: PropTypes.func.isRequired
+    changed: PropTypes.func.isRequired,
 }

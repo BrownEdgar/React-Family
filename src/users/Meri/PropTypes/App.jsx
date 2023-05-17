@@ -12,7 +12,7 @@ export default function App() {
                 setBackData(json)
             });
     },[])
-    const change = (id) => {
+    const changed = (id) => {
         const newdata = data.map((elem) => {
             if(elem.id == id) {
                 elem.completed = !elem.completed;
@@ -39,7 +39,7 @@ export default function App() {
             <button onClick={redToGreen}>Red to Green</button>
             <button onClick={greenToRed}>Green to red</button>
             <button onClick={back}>Back to the original data</button>
-            <Component data={data} change={change}/>
+            <Component data={data} changed={changed}/>
         </div>
     )
 }

@@ -1,39 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-	const [people, setPeople] = React.useState([
-		{ id: 1, name: 'Wes', year: 1988 },
-		{ id: 2, name: 'Kait', year: 1986 },
-		{ id: 3, name: 'Eleonor', year: 1970 },
-		{ id: 4, name: 'Lux', year: 2015 },
-	]);
-	const btnClick1 = () => {
-		if (!Object.hasOwn(...people, "solary")) {
-			setPeople({ ...people, solary: (Math.trunc(Math.random() * 800000) + 150000) })
+import React, {useState, useEffect} from 'react'
+import Posts from './Posts'
+export default function App() {
+	const [data, setData] = useState([])
+	 useEffect(() => {
+		const getdata = () => {
+			fetch('https://jsonplaceholder.typicode.com/posts')
+				.then(response => response.json())
+				.then(json => setData(json))
 		}
-	}
-	const [result, setResult] = React.useState('')
-	const btnClick2 = () => {
-
-	}
-	const btnClick3 = () => {
-		if ({ ...people.id === 3 }) {
-			setPeople({ ...people, year: 1986 })
-		}
+		getdata()
+	},[])
+	function removePost (id) {
+		const newData = data.filter((data) => data.id !== id)
+		setData(newData)
 	}
 	return (
-		<div>
-			<pre>
-				{JSON.stringify(people, null, 1)}
-			</pre>
-			<button onClick={btnClick1}>Click Btn 1</button>
-			<button onClick={btnClick2}>Click Btn 2</button>
-			<button onClick={btnClick3}>Click Btn 3</button>
+		<div className="divNav">
+			<h1>Lesson 6</h1>
+			<Posts removePost={removePost} posts={data}/>
 		</div>
 	)
 }
-
-export default App

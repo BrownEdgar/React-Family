@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Component from './Component';
 
 export default function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=8')
       .then((res) => res.json())
       .then((json) => setData(json));
   }, []);
@@ -25,85 +25,23 @@ export default function App() {
     setData(del);
   };
 
-  const oneFunc = () => {
-    const items = data.filter((elem) => elem.completed);
-    const unitems = data.filter((elem) => !elem.completed);
+ 
+	const sortedData = (type = "default") => { 
+		if (type === 'red') {
+			setData(data.toSorted((a, b) => a.completed - b.completed))
+		}
+		if (type === 'green') {
+			setData(data.toSorted((a, b) => b.completed - a.completed))
+		}
+		if (type === 'default') {
+			setData(data.toSorted((a, b) => a.id - b.id))
+		}
+	}
 
-    const elements = items.map((elem) => (
-      <div key={elem.id} className='flex__item' onClick={() => toggleStatus(elem.id)}>
-        <span className='flex__item__del' onClick={() => deleteFunc(elem.id)}>
-          &#10006;
-        </span>
-        <h2>{elem.title}</h2>
-        <span className='flex__status flex__status-success'></span>
-      </div>
-    ));
-
-    const unelements = unitems.map((elem) => (
-      <div key={elem.id} className='flex__item' onClick={() => toggleStatus(elem.id)}>
-        <span className='flex__item__del' onClick={() => deleteFunc(elem.id)}>
-          &#10006;
-        </span>
-        <h2>{elem.title}</h2>
-        <span className='flex__status flex__status-failure'></span>
-      </div>
-    ));
-
-    return (
-      <div>
-        {elements}
-        {unelements}
-      </div>
-    );
-  };
-
-  const twoFunc = () => {
-    const items = data.filter((elem) => elem.completed);
-    const unitems = data.filter((elem) => !elem.completed);
-
-    const elements = items.map((elem) => (
-      <div key={elem.id} className='flex__item' onClick={() => toggleStatus(elem.id)}>
-        <span className='flex__item__del' onClick={() => deleteFunc(elem.id)}>
-          &#10006;
-        </span>
-        <h2>{elem.title}</h2>
-        <span className='flex__status flex__status-success'></span>
-      </div>
-    ));
-
-    const unelements = unitems.map((elem) => (
-      <div key={elem.id} className='flex__item' onClick={() => toggleStatus(elem.id)}>
-        <span className='flex__item__del' onClick={() => deleteFunc(elem.id)}>
-          &#10006;
-        </span>
-        <h2>{elem.title}</h2>
-        <span className='flex__status flex__status-failure'></span>
-      </div>
-    ));
-
-    return (
-      <div>
-        {unelements}
-        {elements}
-      </div>
-    );
-  };
-
-  const threeFunc = () => {
-    return data.map((elem) => (
-      <div key={elem.id} className='flex__item' onClick={() => toggleStatus(elem.id)}>
-        <span className='flex__item__del' onClick={() => deleteFunc(elem.id)}>
-          &#10006;
-        </span>
-        <h2>{elem.title}</h2>
-        <span className={`flex__status ${elem.completed ? 'flex__status-success' : 'flex__status-failure'}`}></span>
-      </div>
-    ));
-  };
 
   return (
     <div>
-      <Component data={data} oneFunc={oneFunc} twoFunc={twoFunc} threeFunc={threeFunc} deleteFunc={deleteFunc} toggle={toggleStatus} />
+			<Component data={data} deleteFunc={deleteFunc} toggle={toggleStatus} sortedData={sortedData}/>
     </div>
   );
 }

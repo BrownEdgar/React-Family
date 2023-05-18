@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import Component from './Component'
 
 export default function App() {
     const [data, setData] = useState([]);
-    const [backData, setBackData] = useState([]);
+   
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then(res => res.json())
             .then(json => {
                 setData(json)
-                setBackData(json)
+                
             });
     },[])
     const changed = (id) => {
@@ -21,18 +21,19 @@ export default function App() {
         })
         setData(newdata)
     }
+
     const redToGreen = () => {
-        const newdata = [...data];
-        newdata.sort((a,b) => (a.completed === b.completed ? '' : a.completed ? b.completed - a.completed : a.completed - b.completed))
-        setData(newdata);
+			const newdata = data.toSorted((a, b) => b.completed - a.completed)
+			setData(newdata)
     }
     const greenToRed = () => {
-        const newdata = [...data];
-        newdata.sort((a,b) => (a.completed === b.completed ? '' : b.completed ? a.completed - b.completed : b.completed - a.completed))
-        setData(newdata);
+        const newdata = data.toSorted((a,b) => a.completed - b.completed)
+        setData(newdata)
     }
     const back = () => {
-        setData(backData)
+			const newdata = data.toSorted((a, b) => a.id - b.id);
+		
+			setData(newdata);
     }
     return (
         <div>

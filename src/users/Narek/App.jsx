@@ -22,6 +22,7 @@ function App() {
 	const btnClick3 = () => {
 		if ({ ...people.id === 3 }) {
 			setPeople({ ...people, year: 1986 })
+			
 		}
 	}
 	return (

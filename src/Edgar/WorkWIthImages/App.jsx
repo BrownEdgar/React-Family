@@ -4,6 +4,7 @@ import "./App.scss"
 
 export default function App() {
 	const [user, setUser] = useState({});
+	console.log(user)
 	useEffect(() => {
 		fetch('https://dummyjson.com/products/9')
 		.then(res => res.json())

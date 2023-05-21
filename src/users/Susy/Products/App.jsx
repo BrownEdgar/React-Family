@@ -92,7 +92,7 @@ export default function App() {
     useEffect(() => {
         fetch('https://dummyjson.com/products')
             .then(res => res.json())
-            .then(data => setUsers(data));
+            .then(data => setUsers(data.products));
     }, []);
 
     return (

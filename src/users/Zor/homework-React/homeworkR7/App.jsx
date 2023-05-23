@@ -1,6 +1,29 @@
 import { useState} from 'react'
 import './App.scss'
 
+const foods = [
+	{
+		name: '🍔',
+		price: 30,
+		amount: 10,
+	},
+	{
+		name: '🍨',
+		price: 20,
+		amount: 3,
+	},
+	{
+		name: '🍿',
+		price: 10,
+		amount: 5,
+	},
+	{
+		name: '🍵',
+		price: 5,
+		amount: 9,
+	},
+]
+
 export default function App() {
   const [arrfoods, setArrfoods] = useState(foods)
   const [result, setResult] = useState()
@@ -53,7 +76,7 @@ export default function App() {
 
   const decreaseAmount = () => {
     const foodsAmount = [...arrfoods]
-    foodsAmount.map( (elem, index) => {
+    foodsAmount.map( (elem) => {
       if (elem.name === '🍵' && elem.amount > 0 || elem.name === '🍿' && elem.amount > 0) {
         elem.amount = elem.amount - 1
       }
@@ -77,12 +100,12 @@ export default function App() {
   }
 
   const hasFoodStoke = () => {
-    const foodStoke = [...arrfoods]
-    foodStoke.map( elem => {
+    const foodStoke = [...arrfoods].map( elem => {
       if (elem.amount > 0) {
         elem.inStoke = 'true'
       } else {
-        delete elem.inStoke
+        delete elem.inStoke;
+				return elem
       }
     })
     setArrfoods(foodStoke);
@@ -121,26 +144,3 @@ export default function App() {
     </div>
   )
 }
-
-const foods = [
-  {
-    name: '🍔',
-    price: 30,
-    amount: 10,
-  },
-  {
-    name: '🍨',
-    price: 20,
-    amount: 3,
-  },
-  {
-    name: '🍿',
-    price: 10,
-    amount: 5,
-  },
-  {
-    name: '🍵',
-    price: 5,
-    amount: 9,
-  },
-]

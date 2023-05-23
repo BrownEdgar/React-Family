@@ -34,7 +34,7 @@ export default function App(){
         <div>
             <h1>Axios</h1>
             <pre>
-                {JSON.stringify(data.users, null, 1)}
+                {JSON.stringify(data.users, ["name"], 1)}
             </pre>
             <button onClick={handleClick}>Click me</button>
         </div>

@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+
+    p {
+      font-size: 24px;
+    }
+  }
+  &__title {
+    font-size: 100px;
+  }
+  &__id {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+  }
+  &__stoke {
+    color: hotpink;
+  }
+}
+
+h3 {
+  margin: 30px;
+  font-size: 25px;
+  font-weight: 500;
+
+  span {
+    color: blue;
+  }
+}
+
+nav {
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  button {
+    padding: 10px 30px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid rgb(151, 151, 250);
+    border-radius: 15px;
+  }
+}

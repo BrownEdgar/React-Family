@@ -1,6 +1,6 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom/client'
-import App from './users/Anahit/App'
+import App from './Edgar/Hooks/useReducer/App'
 import './index.css'
 
 

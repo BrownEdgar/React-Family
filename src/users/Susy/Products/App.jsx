@@ -89,11 +89,11 @@ import "./App.scss";
 export default function App() {
 	const [users, setUsers] = useState([]); // Initialize users as an empty array
 
-	useEffect(() => {
-		fetch('https://dummyjson.com/products')
-			.then(res => res.json())
-			.then(data => setUsers(data.products));
-	}, []);
+    useEffect(() => {
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(data => setUsers(data.products));
+    }, []);
 
 	return (
 		<div>

@@ -1,0 +1,5 @@
+export const TODAY_FILTER = 'TODAY_FILTER'
+export const SORT_AGE = 'SORT_AGE'
+export const INCREASE_REVENUE = 'INCREASE_REVENUE'
+export const CHANGE_YEAR = 'CHANGE_YEAR'
+export const AUGUST = 'AUGUST'

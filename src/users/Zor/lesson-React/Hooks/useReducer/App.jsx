@@ -1,5 +1,5 @@
 import { useReducer } from 'react'
-import reducer, {initialStateValue} from './reducer'
+import reducer, { initialStateValue } from './reducer'
 import { ADD_ELEMENT, RESET } from './actionType'
 
 export default function App() {

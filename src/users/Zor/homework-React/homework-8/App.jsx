@@ -28,26 +28,6 @@ export default function App() {
   const [arrfoods, setArrfoods] = useState(foods)
   const [result, setResult] = useState()
 
-  function Component(props) {
-    return (
-      <div className='flex'>
-        {
-          props.data.map( elem => {
-            return (
-              <div key={elem.name} className='flex__item'>
-                <h2 className='flex__title'>{elem.name}</h2>
-                <p className='flex__price'>Price: {elem.price}</p>
-                <p className='flex__amount'>Amount: {elem.amount}</p>
-                <p className='flex__stoke'>{elem.inStoke}</p>
-                <span className='flex__id'>{elem.id}</span>
-              </div>
-            )
-          })
-        }
-      </div>
-    )
-  }
-
   const createId = () => {
     const foodsId = [...arrfoods]
       foodsId.map( (elem, index) => {
@@ -141,6 +121,26 @@ export default function App() {
       <h3>Result: <span>{result}</span></h3>
       
       <Component data={arrfoods}/>
+    </div>
+  )
+}
+
+function Component(props) {
+  return (
+    <div className='flex'>
+      {
+        props.data.map( elem => {
+          return (
+            <div key={elem.name} className='flex__item'>
+              <h2 className='flex__title'>{elem.name}</h2>
+              <p className='flex__price'>Price: {elem.price}</p>
+              <p className='flex__amount'>Amount: {elem.amount}</p>
+              <p className='flex__stoke'>{elem.inStoke}</p>
+              <span className='flex__id'>{elem.id}</span>
+            </div>
+          )
+        })
+      }
     </div>
   )
 }

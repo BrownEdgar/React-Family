@@ -1,4 +1,4 @@
-import { func } from "prop-types";
+
 import { ADD_ELEMENT, RESET } from "./actionType";
 
 export const initialStateValue = {
@@ -36,6 +36,7 @@ export default function reducer(state = initialStateValue, action) {
 
   function addElement(state, action) {
     return {
+      ...state,
       data: [...state.data].concat(action.payload.element),
       lastAction: ADD_ELEMENT,
       actioncount: state.actioncount + 1,

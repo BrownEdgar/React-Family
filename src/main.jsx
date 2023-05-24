@@ -1,6 +1,6 @@
 
 import ReactDOM from 'react-dom/client'
-import App from './Edgar/Hooks/useReducer/App'
+import App from './users/Zor/homework-React/homework-9/App'
 import './index.css'
 
 

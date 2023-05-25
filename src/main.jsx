@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import App from './Edgar/Hooks/useReducer/App'
+import App from './Edgar/Hooks/CustomHook/App'
 import './index.css'
 
 

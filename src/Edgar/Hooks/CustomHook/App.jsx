@@ -1,4 +1,3 @@
-
 import useSimpleHook from './useSimpleHook'
 
 export default function App() {
@@ -7,8 +6,7 @@ export default function App() {
 	return (
 		<div>
 			<h1>Count:{JSON.stringify(count)}</h1>
-			<button onClick={getSum}>add count</button>
-			
+			<button onClick={getSum}>add count</button>		
 		</div>
 	)
 }

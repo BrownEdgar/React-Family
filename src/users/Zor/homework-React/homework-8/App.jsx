@@ -1,29 +1,32 @@
 import { useState} from 'react'
 import './App.scss'
 
+const foods = [
+	{
+		name: '🍔',
+		price: 30,
+		amount: 10,
+	},
+	{
+		name: '🍨',
+		price: 20,
+		amount: 3,
+	},
+	{
+		name: '🍿',
+		price: 10,
+		amount: 5,
+	},
+	{
+		name: '🍵',
+		price: 5,
+		amount: 9,
+	},
+]
+
 export default function App() {
   const [arrfoods, setArrfoods] = useState(foods)
   const [result, setResult] = useState()
-
-  function Component(props) {
-    return (
-      <div className='flex'>
-        {
-          props.data.map( elem => {
-            return (
-              <div key={elem.name} className='flex__item'>
-                <h2 className='flex__title'>{elem.name}</h2>
-                <p className='flex__price'>Price: {elem.price}</p>
-                <p className='flex__amount'>Amount: {elem.amount}</p>
-                <p className='flex__stoke'>{elem.inStoke}</p>
-                <span className='flex__id'>{elem.id}</span>
-              </div>
-            )
-          })
-        }
-      </div>
-    )
-  }
 
   const createId = () => {
     const foodsId = [...arrfoods]
@@ -53,7 +56,7 @@ export default function App() {
 
   const decreaseAmount = () => {
     const foodsAmount = [...arrfoods]
-    foodsAmount.map( (elem, index) => {
+    foodsAmount.map( (elem) => {
       if (elem.name === '🍵' && elem.amount > 0 || elem.name === '🍿' && elem.amount > 0) {
         elem.amount = elem.amount - 1
       }
@@ -77,12 +80,12 @@ export default function App() {
   }
 
   const hasFoodStoke = () => {
-    const foodStoke = [...arrfoods]
-    foodStoke.map( elem => {
+    const foodStoke = [...arrfoods].map( elem => {
       if (elem.amount > 0) {
         elem.inStoke = 'true'
       } else {
-        delete elem.inStoke
+        delete elem.inStoke;
+				return elem
       }
     })
     setArrfoods(foodStoke);
@@ -122,25 +125,22 @@ export default function App() {
   )
 }
 
-const foods = [
-  {
-    name: '🍔',
-    price: 30,
-    amount: 10,
-  },
-  {
-    name: '🍨',
-    price: 20,
-    amount: 3,
-  },
-  {
-    name: '🍿',
-    price: 10,
-    amount: 5,
-  },
-  {
-    name: '🍵',
-    price: 5,
-    amount: 9,
-  },
-]
+function Component(props) {
+  return (
+    <div className='flex'>
+      {
+        props.data.map( elem => {
+          return (
+            <div key={elem.name} className='flex__item'>
+              <h2 className='flex__title'>{elem.name}</h2>
+              <p className='flex__price'>Price: {elem.price}</p>
+              <p className='flex__amount'>Amount: {elem.amount}</p>
+              <p className='flex__stoke'>{elem.inStoke}</p>
+              <span className='flex__id'>{elem.id}</span>
+            </div>
+          )
+        })
+      }
+    </div>
+  )
+}

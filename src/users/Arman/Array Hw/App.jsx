@@ -66,7 +66,7 @@ const App = () => {
 
   const addInStock = () => {
     setFood(prevFood =>
-      prevFood.map(item => ({ ...item, inStock: item.amount !== 0 ? true : undefined }))
+      prevFood.map(item => ({ ...item, inStock: item.amount !== 0 }))
     );
   };
 
@@ -75,7 +75,7 @@ const App = () => {
     setFood(sortedFoods);
   };
 
-  const increasePriceById = (id) => {
+  const increasePriceById = () => {
     setFood(prevFood =>
       prevFood.map(item =>
         (item.id === 1 || item.id === 3) ? { ...item, price: item.price + (item.price * 0.3) } : item

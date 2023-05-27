@@ -22,39 +22,35 @@
 
 
 
-import React from "react";
-import SimpleHook from "./SimpleHook";
 
+import SimpleHook from "./SimpeHook";
+const todos = [
+	{
+		"userId": 1,
+		"id": 1,
+		"title": "delectus aut autem",
+		"completed": false
+	},
+	{
+		"userId": 1,
+		"id": 2,
+		"title": "quis ut nam facilis et officia qui",
+		"completed": false
+	}
+]
 export default function App() {
-    const todos = [
-        {
-            "userId": 1,
-            "id": 1,
-            "title": "delectus aut autem",
-            "completed": false
-          },
-          {
-            "userId": 1,
-            "id": 2,
-            "title": "quis ut nam facilis et officia qui",
-            "completed": false
-          },
-          {},
-          {},
-          {},
-          {  }
-    ]
 
- const {
-   data,
-   addId,
-   allDone,
- } = SimpleHook(todos)
- return (
-   <div>
-      <pre>{JSON.stringify(data, null, 1)}</pre>
-      <button onClick={allDone}>All done</button>
-      <button onClick={addId}>Add id</button>    
-  </div>
-)
+
+	const {
+		data,
+		addId,
+		allDone,
+	} = SimpleHook(todos)
+	return (
+		<div>
+			<pre>{JSON.stringify(data, null, 1)}</pre>
+			<button onClick={allDone}>All done</button>
+			<button onClick={addId}>Add id</button>
+		</div>
+	)
 } 

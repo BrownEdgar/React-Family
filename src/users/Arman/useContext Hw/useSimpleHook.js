@@ -36,10 +36,10 @@ export default function useSimpleHook(initialData) {
           : todo
       )
     );
-  };
+  }
 
   const toJson = () => {
-    return JSON.stringify(todos);
+		return JSON.stringify(data);
   };
 
   return {

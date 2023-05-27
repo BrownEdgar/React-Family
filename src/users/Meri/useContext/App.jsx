@@ -13,10 +13,10 @@
 // 			<h1>App component</h1>
 // 			<MyContext.Provider value={{
 // 				"userId": 1,
-//              "id": 1,
-//              "title": "delectus aut autem",
-// 				<A />
+// 				"id": 1,
+// 				"title": "delectus aut autem",
 // 			}}>
+// 				<A />
 // 			</MyContext.Provider>
 // 			<button onClick={createDel}>change</button>
 // 		</div>
@@ -27,44 +27,39 @@
 
 import React from "react";
 import useSimpleHook from "./useSimpleHook";
-
+const todos = [
+	{
+		"userId": 1,
+		"id": 1,
+		"title": "delectus aut autem",
+		"completed": false
+	},
+	{
+		"userId": 1,
+		"id": 2,
+		"title": "quis ut nam facilis et officia qui",
+		"completed": false
+	}
+]
 export default function App() {
-    const todos = [
-        {
-            "userId": 1,
-            "id": 1,
-            "title": "delectus aut autem",
-            "completed": false
-          },
-          {
-            "userId": 1,
-            "id": 2,
-            "title": "quis ut nam facilis et officia qui",
-            "completed": false
-          },
-          {},
-          {},
-          {},
-          {  }
-    ]
-    const {
-        data,
-        // toggleTodo,
-        addId,
-        allDone,
-        removeById,
-        addTodo,
-        // toJson
-    } = useSimpleHook(todos)
-    return (
-        <div>
-            <pre>{JSON.stringify(data, null, 1)}</pre>
-            <button onClick={allDone}>Mark all done</button>
-            <button onClick={addId}>add id</button>    
-            {data.map((todo) => (
-            <button key={todo.id} disabled={!todo.id} onClick={() => removeById(todo.id)}>Delete {todo.id}</button>
-            ))}
-            <button onClick={addTodo}>add todo</button>
-        </div>
-    )
+	
+	const {
+		data,
+		// toggleTodo,
+		addId,
+		allDone,
+		removeById,
+		addTodo,
+		// toJson
+	} = useSimpleHook(todos)
+	return (
+		<div>
+			<pre>{JSON.stringify(data, null, 1)}</pre>
+			<button onClick={allDone}>Mark all done</button>
+			{data.map((todo) => (
+				<button key={todo.id} disabled={!todo.id} onClick={() => removeById(todo.id)}>Delete {todo.id}</button>
+			))}
+			<button onClick={addTodo}>add todo</button>
+		</div>
+	)
 } 

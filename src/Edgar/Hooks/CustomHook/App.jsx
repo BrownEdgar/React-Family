@@ -1,12 +1,13 @@
-import useSimpleHook from './useSimpleHook'
+import useFetchAPI from './useFetchAPI'
+
 
 export default function App() {
+	const users = useFetchAPI('todos', {_limit: 2} );
 
-	const data  = useSimpleHook('https://jsonplaceholder.typicode.com/posts')
 	return (
 		<div>
-			<h1>Count:{JSON.stringify(count)}</h1>
-			<button onClick={getSum}>add count</button>		
+			<pre>{JSON.stringify(users, null, 1)}</pre>
+
 		</div>
 	)
 }

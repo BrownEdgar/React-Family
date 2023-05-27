@@ -1,4 +1,4 @@
-import React from 'react'
+
 import useSimpleHook from "./useSimpleHook";
 export default function App() {
     const todos = [
@@ -14,10 +14,7 @@ export default function App() {
             "title": "quis ut nam facilis et officia qui",
             "completed": false
           },
-          {},
-          {},
-          {},
-          {  }
+    
     ]
     const {
         data,

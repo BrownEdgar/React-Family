@@ -2,53 +2,37 @@ import React, { useState } from "react";
 
 export default function useSimpleHook(initialData) {
 
-    const [data, setData] = useState(initialData)
+	const [data, setData] = useState(initialData)
 
-    // const toggleTodo = (todoId) => {
-    // }
+	// const toggleTodo = (todoId) => {
+	// }
 
-    const allDone = () => {
-        setData(data.map(todo => {
-            if(Object.keys(todo).length > 0) {
-                return{...todo,completed: true}
-            }
-            return todo;
-        }
-        ))      
+	const allDone = () => {
+		setData(data.map(todo => {
+			return { ...todo, completed: true }
+		}
+		))
+	}
 
-    }
 
-    const addId = () => {
-        setData(data.map((todo,index) => {
-            if(Object.keys(todo).length === 0){
-                return{...todo,id:index + 1}
-            }return todo
-        }
-        ))
-    }
+	const removeById = (id) => {
+		setData(data.filter(todo => todo.id !== id))
+	}
 
-    const removeById = (id) => {    
-        setData(data.filter(todo => todo.id !== id))
-    }
+	const addTodo = (newTodo) => {
+		setData([...data, newTodo])
+	}
 
-    const addTodo = (newTodo) => {
-        setData(data.map((todo) => {
-            if(Object.keys(todo).length === 1){
-                return {...todo,userId: 1,title:"Lorem ipsum dolor sit amet consectetur.",completed:false}
-            }return todo
-        }))  
-    }
+	// const toJson = () => {
+	// }
 
-    // const toJson = () => {
-    // }
-
-    return {
-        data,    
-        // toggleTodo,   
-        addId,                        
-        allDone,
-        removeById,
-        addTodo,
-        // toJson
-    }
+	return {
+		data,
+		// toggleTodo,   
+		addId,
+		allDone,
+		removeById,
+		addTodo,
+		// toJson
+	}
 }

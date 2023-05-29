@@ -1,4 +1,3 @@
-
 import { AUGUST } from "./actionTypes";
 
 export const users = [

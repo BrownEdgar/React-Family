@@ -1,8 +1,8 @@
-div {
+.container {
 	width: 1140px;
 	margin: 0 auto;
 	padding: 1rem;
-	
+
 	form {
 		width: 80%;
 		padding: 10px;
@@ -37,12 +37,20 @@ div {
 		}
 	}
 
+    &__scroll {
+        height: 400px;
+        overflow: auto;
+    }
+
 	ul {
 		list-style: none;
 		width: 500px;
 		margin: 20px auto;
 
 		li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 			font-weight: 200;
 			font-size: 18px;
 			font-variant: small-caps;
@@ -50,6 +58,13 @@ div {
 			border-radius: 10px;
 			padding: 12px;
 			border: 1px solid rgba(0, 0, 0, .5);
+
+            &:hover {
+                transition: 0.3s;
+                transform: translateY(-4px);
+                background-color: royalblue;
+                cursor: pointer;
+            }
 		}
 	}
 }

@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+	margin: 0;
+	padding:0;
+	box-sizing:border-box;
+}
+
 :root {
 	font-family: 'Outfit', sans-serif;
-
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -27,6 +31,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+		overflow: hidden;
 }
 
 h1 {

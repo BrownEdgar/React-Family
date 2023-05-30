@@ -18,7 +18,7 @@ export default function App() {
 	}
 	return (
 		<div>
-
+			
 			<form onSubmit={handleSubmit}>
 				<input type="text" placeholder='name' required />
 				<input type="submit" value='save' />

@@ -6,15 +6,25 @@ div {
 	form {
 		width: 80%;
 		padding: 10px;
-		margin: 10px auto;
+		border: 2px solid teal;
 		text-align: center;
+		div{
+			display: flex;
+			justify-content: flex-start;
+			border: 2px solid teal;
+			width: 100%;
+			align-items: center;
+		}
 
+		label {
+			cursor: pointer;
+		}
 		input {
 			padding: 12px;
 			border: 0;
-			box-shadow:  rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	
 			transition: 0.3s;
-			width: 300px;
+			width: 20px;
 			margin: 8px;
 
 			&[type='submit'] {

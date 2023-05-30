@@ -36,7 +36,7 @@ div {
 		width: 500px;
 		margin: 20px auto;
         height: 430px;
-        overflow: scroll;
+        overflow-y: auto;
         position: relative;
 		li {
 			font-weight: 200;

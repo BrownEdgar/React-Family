@@ -1,6 +1,6 @@
 
 import ReactDOM from 'react-dom/client'
-import App from './Edgar/Hooks/CustomHook/App'
+import App from './App.jsx'
 import './index.css'
 
 

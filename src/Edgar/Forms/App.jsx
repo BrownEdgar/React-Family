@@ -10,12 +10,6 @@ export default function App() {
 		setUser([...users, value]);
 		e.target.reset();
 	}
-
-	const removeElem=(index)=>{
-			const deleteVal = [...users]
-			deleteVal.splice(index, 1)
-			setUser(deleteVal)
-	}
 	return (
 		<div>
 
@@ -26,7 +20,7 @@ export default function App() {
 			{
 				users.length > 0 ? (
 					<ul>
-						{users.map((user, index) => <li key={index}>{user} <button onClick={()=> removeElem(index)}>x</button> </li>)}
+						{users.map((user, index) => <li key={index}>{user}</li>)}
 					</ul>
 				) : null
 			}

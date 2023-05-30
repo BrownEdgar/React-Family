@@ -1,6 +1,6 @@
 
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './Edgar/Forms/App'
 import './index.css'
 
 

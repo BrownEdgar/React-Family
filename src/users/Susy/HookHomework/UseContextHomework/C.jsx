@@ -1,14 +1,14 @@
-import React from "react";
+import React, {useContext}from "react";
 import { MyContext } from "./Context";
 
 
 export default function C() {
-    return (
-        <div>
-            <MyContext.Consumer>
-                {(value) => <h2>C Component :{value}</h2>}
-            </MyContext.Consumer>
-            
-        </div>
-    )
+	const value = useContext(MyContext);
+	console.log(value)
+	return (
+		<div>
+			<h2>Component C {value.data}</h2>
+
+		</div>
+	)
 }

@@ -1,6 +1,6 @@
 
 import ReactDOM from 'react-dom/client'
-import App from './Edgar/Forms/Formik/App'
+import App from './/Edgar/Forms/Formik/App'
 import './index.css'
 
 

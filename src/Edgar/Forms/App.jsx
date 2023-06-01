@@ -19,41 +19,29 @@ export default function App() {
 	}
 
 	return (
-		<div>
-			<form>
-				<div>
-					<input
-						type="radio"
-						id='barcelona'
-						name='city'
-						value='Barcelona'
-						onChange={handleChange}
-					/>
-					<label htmlFor="barcelona">Barcelona</label>
-				</div>
-				<div>
-					<input
-						type="radio"
-						id='paris'
-						name='city'
-						value='Paris'
-						onChange={handleChange}
-					/>
-					<label htmlFor="paris">Paris</label>
-				</div>
-				<div>
-					<input
-						type="radio"
-						id='rome'
-						name='city'
-						value='Rome'
-						onChange={handleChange}
-					/>
-					<label htmlFor="rome">Rome</label>
-				</div>
-			</form>
-			{/* <h1>{cities.join(' | ')}</h1> */}
-			<h1>{JSON.stringify(cities,null,1)}</h1>
+		<div className='parent'>
+			<div className="parent__container">
+				<form>
+					<div>
+						<input
+							type="text"
+							id='email'
+							name='email'
+						/>
+						<label htmlFor="email">Email</label>
+					</div>
+					<div>
+						<input
+							type="password"
+							id='password'
+							name='password'
+						/>
+						<label htmlFor="password">password</label>
+					</div>
+				
+				</form>
+			</div>
+
 		</div>
 	)
 }

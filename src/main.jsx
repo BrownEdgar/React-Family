@@ -1,6 +1,6 @@
 
 import ReactDOM from 'react-dom/client'
-import App from './users/Zor/lesson-React/Form2/Formik/App'
+import App from './users/Zor/lesson-React/Formik-2/App'
 import './index.css'
 
 

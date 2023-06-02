@@ -8,7 +8,7 @@ export default function App() {
   })
 
   const handleChang = (e) => {
-    const {value, checked, name} = e.target;
+    const {checked, name} = e.target;
 
     setCity({...city, [name]: checked})
 

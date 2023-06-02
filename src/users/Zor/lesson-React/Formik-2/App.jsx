@@ -5,7 +5,7 @@ import * as yup from 'yup'
 
 const userSchema = yup.object({
   email: yup.string().email().required(),
-  password: yup.string.min(8).max(18).matches(/^[A-Z]/, "Mast by start with uppercase").required()
+  password: yup.string().min(8).max(18).matches(/^[A-Z]/, "Mast by start with uppercase").required()
 })
 
 export default function App() {

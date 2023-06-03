@@ -1,0 +1,97 @@
+.parent {
+	background-color: rgb(58, 57, 57);
+	margin: 50px auto;
+	max-width: 700px;
+	height: auto;
+
+	&__container {
+		padding: 50px;
+		display: flex;
+		flex-direction: column;
+		gap: 70px;
+
+		h1 {
+			color: white;
+			font-weight: 900;
+			font-size: 42px;
+		}
+
+		form {
+
+			&>div {
+				display: flex;
+				width: 100%;
+				margin: 10px;
+				flex-direction: column;
+
+				label {
+					font-weight: 700;
+					font-size: 20px;
+					color: #fff;
+					margin-bottom: 6px;
+					text-align: left;
+					font-variant: small-caps;
+				}
+
+				input {
+					padding: 22px 16px;
+					font-size: 20px;
+					color: #f3f3f3;
+					width: 100%;
+					border-radius: 10px;
+					border: none;
+					background-color: rgba(47, 135, 141, 0.116);
+					&:disabled {
+						background-image: linear-gradient(90deg, #322c2b, #380317);
+						cursor: no-drop;
+						
+					}
+				}
+
+				p.error {
+					color: #ff0404;
+
+				}
+			}
+		}
+
+		h3 {
+			color: white;
+			font-weight: 900;
+			font-size: 20px;
+			margin: 20px 0;
+			padding-left: 20px;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		column-gap: 20px;
+		flex-direction: row !important;
+
+		button {
+			width: 50%;
+			padding: 20px 10px;
+			margin: 10px;
+			background-color: rgba(47, 135, 141, 0.116);
+			border: 1px solid rgba(0, 0, 0, 0.205);
+			border-radius: 10px;
+
+			&:hover {
+				background-color: rgba(56, 125, 216, 0.658);
+				transition: all .5s linear;
+			}
+		}
+
+		span {
+			color: white;
+			font-weight: 900;
+			font-size: 20px;
+		}
+	}
+}
+
+pre {
+	color: orangered;
+	font-weight: 500;
+}

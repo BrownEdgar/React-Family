@@ -1,85 +1,78 @@
-
-
 import { useState } from "react";
-import { useFormik } from "formik"
+import { ErrorMessage, Field, Form, Formik, } from "formik"
 import { v4 as uuidv4 } from 'uuid';
 import * as yup from 'yup'
 import "./App.scss"
 
 const userSchema = yup.object({
-		email: yup.string().email().required(),
+	email: yup.string().email().required(),
+	policy: yup.boolean().isTrue(),
 	password: yup.string().min(8).max(18).matches(/^[A-Z]/, "Must by start with uppercase").required()
-	})
+})
 
 
 export default function App() {
-const [users, setUsers] = useState([])
+	const [users, setUsers] = useState([])
 
-	const formik = useFormik({
-		initialValues: {
-			email: '',
-			password: ''
-		},
-		onSubmit(values, formik){
-				const user = {
-					id: uuidv4(),
-					...values
-				}
-			setUsers([...users, user])
-			formik.resetForm()
-		},
-		validationSchema: userSchema
-	})
-	console.log(formik.touched)
+
+	const handleSubmit = (values, formik) => {
+		const user = {
+			id: uuidv4(),
+			...values
+		}
+		setUsers([...users, user])
+		formik.resetForm();
+	}
 
 	return (
 		<div className='parent'>
 			<div className="parent__container">
-				<form onSubmit={formik.handleSubmit}>
-					<div>
-						<label htmlFor="email">Email</label>
-						<input
-							type="text"
-							id='email'
-							name='email'
-							value={formik.values.email}
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-						/>
-						{
-							(formik.touched.email && formik.errors.email)
-								? <p className="error">{formik.errors.email}</p>
-								: null
+				<Formik
+					initialValues={{
+						email: '',
+						password: '',
+						policy: ''
+					}}
+					validationSchema={userSchema}
+					onSubmit={handleSubmit}
+				>
+					{
+						(formik) => {
+							console.log(formik.isValid)
+							return (
+								<Form>
+									<div>
+										<label htmlFor="email">Email</label>
+										<Field type="text" id='email' name='email' />
+										<ErrorMessage name='email'>
+											{(err) => <p className="error">{err}</p>}
+										</ErrorMessage>
+									</div>
+									<div>
+										<label htmlFor="password">password</label>
+										<Field type="password" id='password' name='password' />
+										<ErrorMessage name='password' component='p' className="error" />
+									</div>
+									<div>
+										<Field type="checkbox" id='policy' name='policy' />
+										<label htmlFor="policy">Policy success control</label>
+										<ErrorMessage name='policy' component='p' className="error" />
+									</div>
+									<h3>Забыли пароль?</h3>
+									<div className="parent__buttons">
+										<input type="submit" value='Регистрация' disabled={!formik.isValid}/>
+									</div>
+								</Form>
+							)
 						}
-					</div>
-					<div>
-						<label htmlFor="password">password</label>
-						<input
-							type="password"
-							id='password'
-							name='password'
-							value={formik.values.password}
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-						/>
-						{
-							(formik.touched.password && formik.errors.password) 
-							? <p className="error">{formik.errors.password}</p> 
-							: null
-						}
-						
-						
-					</div>
-					<h3>Забыли пароль?</h3>
-					<div className="parent__buttons">
-					
-						<input type="submit" value='Регистрация' />
-					</div>
-				</form>
+					}
+				
+				</Formik>
+
 			</div>
 			<pre>
-				{JSON.stringify(users,null,1)}
+				{JSON.stringify(users, null, 1)}
 			</pre>
-		</div>
+		</div >
 	)
 }

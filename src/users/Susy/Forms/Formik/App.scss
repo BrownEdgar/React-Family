@@ -1,87 +1,87 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .container {
-    margin: 0 auto;
-    width: 350px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    background-color: rgb(77, 76, 76);
-    padding: 10px;
-
-
-    h1 {
-        margin: 10px 0;
-        color: white;
-        font-size: 27px;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    background-image: url('/hotel.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transform: scaleX(-1);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &::before {
+        content: '';
+        background-color: rgba($color: #1e1847, $alpha: .4);
+        position: absolute;
+        inset: 0 0 0 0;
     }
-
-    form {
+    &-wraper {
+        width: 80%;
+        margin: 0px auto;
+        position: relative;
+        z-index: 2;
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        input {
-            width: 170%;
-            height: 30px;
-            margin-top: 10px;
-            background-color: rgb(134, 134, 134);
-        }
+        justify-content: start;
+        padding: 1rem;
     }
+    &-form {
+        background-color: white;
+        padding: 40px;
+        width: 400px;
+        transform: scaleX(-1);
 
-    h3 {
-        color: white;
-        margin: 10px 0;
-        font-size: 16px;  
-    }
-
-    &__buttons {
-        display: flex;
-        column-gap: 20px;
-        
-        button {
-            width: 130px;
-            background-color: rgb(134, 134, 134);
-            height: 40px;
-            span {
-                font-weight: 600;
-                font-size: 13px;
-                align-items: center;
+        form {
+            padding: 1rem;
+            div {
+                margin: 10px auto;
+                input {
+                    width: 100%;
+                    padding: 12px;
+                    color: rgb(91, 91, 91);
+                    border: 2px solid rgba(100, 100, 100, 0.206);
+                    &:focus {
+                        outline: 1px solid grey;
+                    }
+                }
+                
             }
-        }  
-    }
+            .w-50 {
+                display: flex;
+                div {
+                    select {
+                        width: 100%;
+                        padding: 12px 70px  12px 5px;
+                        color: rgb(91, 91, 91);
+                        border: 2px solid rgba(100, 100, 100, 0.206);
+                        option {
+                            justify-items: flex-start;
+                        }
+                        &:focus {
+                            outline: 1px solid grey;
+                        }
 
-    .blue {
-        background-color: rgb(103, 172, 236);
-        span {
-            font-weight: 600;
-            font-size: 13px;
+                    }
+                }
+            }
         }
-    }
-
-    .grey {
-        span {
+        input[type='submit'] {
+            background-color: rgb(149, 149, 70);
             color: white;
         }
-    }
-}
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+        input[type="slect"]::-webkit-validation-bubble-top-inner-arrow {
+            display: inline;
+        }
 
-.users {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px ;
-    h4 {
-        font-size: 23px;
-        font-weight: 600;
-        color:rgb(77, 76, 76) ;
-    }
-    p {
-        align-items: flex-start;
-        justify-content: space-between;
+        
+        
     }
 }

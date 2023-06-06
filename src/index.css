@@ -20,7 +20,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: inherit;
   text-decoration: inherit;
 }
 a:hover {
@@ -69,4 +69,13 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+.post-link {
+	margin: 12px;
+	display: inline-block;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	padding: 1em;
+	font-size: 20px;
 }

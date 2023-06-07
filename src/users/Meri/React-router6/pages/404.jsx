@@ -7,7 +7,7 @@ export default function ErrorPage() {
 	const navigate = useNavigate()
 	const hoHome = () => {
 		// navigate('/')
-		navigate({pathname: ROUTES.ABOUT})
+		navigate({pathname: ROUTES.HOME})
 	}
 	return (
 		<div style={{textAlign: "center"}}>

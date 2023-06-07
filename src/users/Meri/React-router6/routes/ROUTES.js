@@ -1,7 +1,7 @@
 const ROUTES = {
 	HOME: '/',
 	ABOUT: '/about',
-	BLOG: '/blog',
+	ALBUMS: '/albums',
 	CONTACT: '/contact',
 	404: '*'
 }

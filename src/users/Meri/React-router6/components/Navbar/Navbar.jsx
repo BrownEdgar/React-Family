@@ -15,7 +15,7 @@ export default function Navbar() {
             <NavLink to={ROUTES.ABOUT}>ABOUT</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.BLOG}>BLOG</NavLink>
+            <NavLink to={ROUTES.ALBUMS}>ALBUMS</NavLink>
           </li>
           <li>
             <NavLink to={ROUTES.CONTACT}>Contact</NavLink>

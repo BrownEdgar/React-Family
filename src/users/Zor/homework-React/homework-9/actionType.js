@@ -1,0 +1,5 @@
+export const PERSON_TODAY = "PERSON_TODAY"
+export const SORT_YEAR = "SORT_YEAR"
+export const SMALL_INCOME = "SMALL_INCOME"
+export const CHANGE_YEAR = "CHANGE_YEAR"
+export const PEOPLE_AUGUST = "PEOPLE_AUGUST"

@@ -1,0 +1,57 @@
+.container {
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+	background-image: url('./public/hotel.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	transform: scaleX(-1);
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	&::before{
+		content: '';
+		background-color: rgba($color: #000000, $alpha: .6);
+		position: absolute;
+		inset: 0 0 0 0;
+	}
+	&-wrapper {
+		width: 80%;
+		margin: 0px auto;
+		z-index: 2;
+		position: relative;
+		display: flex;
+		
+		align-items: center;
+		padding: 1rem;
+
+	}
+	&-form {
+		background-color: #f2f2f2;
+		padding: 40px;
+		width: 420px;
+		transform: scaleX(-1);
+		h2 {
+			text-align: center;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+		}
+		form {
+			padding: 1rem;
+			div{
+				margin: 10px auto;
+				input,select{
+					width: 100%;
+					color: rgb(83, 83, 83);
+					padding: 14px;
+					border: 1px solid rgba(128, 128, 128, 0.7);
+					&:focus {
+						outline: 1px solid grey;
+					}
+				}
+			}
+		}
+	}
+
+}

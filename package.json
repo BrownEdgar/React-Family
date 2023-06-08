@@ -15,15 +15,10 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router": "^6.12.0",
     "react-router-dom": "^6.12.0",
-<<<<<<< HEAD
-    "sass": "^1.62.1"
-=======
     "sass": "^1.62.1",
     "uuid": "^9.0.0",
     "yup": "^1.2.0"
->>>>>>> 737d22dda13a54b5d77913222b8bb5258b19b9cc
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

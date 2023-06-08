@@ -17,9 +17,9 @@ export default function App() {
 	const [bookingList, setBookingList] = useState([]);
 	console.log(bookingList)
 
-	const handleSubmit = (values, { formReset }) => {
+	const handleSubmit = (values) => {
         const maxPeople = +values.adults + +values.children
-        if(maxPeople > 2) {
+        if(maxPeople > 4) {
             alert('Maxium of 2 people allowed to register.')
         }
 

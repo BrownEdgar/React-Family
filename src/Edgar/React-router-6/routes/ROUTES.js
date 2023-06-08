@@ -1,6 +1,6 @@
 const ROUTES = {
 	HOME: '/',
-	ABOUT: 'about',
+	POSTS: 'posts',
 	BLOG: 'blog',
 	CONTACT: 'contact',
 	404: '*',

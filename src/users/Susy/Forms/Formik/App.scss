@@ -74,12 +74,10 @@
             margin-bottom: 10px;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        input[type="date"]::-webkit-calendar-picker-indicator {
-            display: none;
+        input[type="date"]{
+            appearance: none;
         }
-        input[type="slect"]::-webkit-validation-bubble-top-inner-arrow {
-            display: inline;
-        }
+       
 
         
         

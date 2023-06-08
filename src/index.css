@@ -71,11 +71,3 @@ button:focus-visible {
   }
 }
 
-
-.post-link {
-	margin: 12px;
-	display: inline-block;
-	border: 1px solid rgba(0, 0, 0, 0.4);
-	padding: 1em;
-	font-size: 20px;
-}

@@ -1,0 +1,93 @@
+
+
+
+.post-wrapper {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.post-link {
+  width: calc(31% - 10px);
+  margin: 12px;
+  display: inline-block;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  font-size: 20px;
+  position: relative;
+}
+.del-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: red;
+  cursor: pointer;
+}
+.post,
+.edit-form {
+  padding: 1rem;
+  background: #dedede;
+  border: 1px solid #000;
+  border-radius: 16px;
+  width: 400px;
+  margin: 30px;
+  height: 400px;
+  vertical-align: top;
+  display: inline-block;
+
+  h2 {
+    margin-bottom: 14px;
+    border-bottom: 1px solid #000;
+  }
+  h3 {
+    text-align: center;
+    font-weight: 600;
+    color: rgb(63, 148, 63);
+    text-transform: uppercase;
+    font-variant: small-caps;
+    font-size: 20px;
+  }
+  input, textarea {
+    padding: 12px;
+    margin: 10px 0;
+    width: 100%;
+    border: 0;
+
+  }
+  textarea {
+    resize: none;
+  }
+}
+.create-form {
+  max-width: 800px;
+  margin: 30px auto;
+  
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    input {
+      height: 30px; 
+      padding: 5px;
+      font-size: 19px;
+      outline: none;
+
+    }
+    textarea {
+      resize: none;
+      outline: none;
+      padding: 5px;
+      font-size: 17px;
+    }
+    input[type='submit'] {
+      margin: 10px 0;
+      margin-right: auto;
+      padding: 10px;
+      height: auto;
+    }
+  }
+}

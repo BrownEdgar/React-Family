@@ -10,13 +10,17 @@ export default function Album() {
         .then(res => setAlbum(res.data))
   },[id])
 	return (
-		<div>
-			<h1>Welcome to post N {id}</h1>
-                <div key={album.id}>
-                    <h1>{album.title}</h1>
-                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, laudantium a. Odit architecto praesentium quisquam?</h2>
-                    <img src={album.url} alt={album.title} />
-                </div>
-		</div>
+		<>
+			<h1 style={{textAlign: 'center'}}>Welcome to post N {id}</h1>
+        <div className="item" key={album.id}>
+          <div className="item-img">
+            <img src={album.url} alt={album.title} />
+          </div>
+          <div className="item-info">
+            <h2>{album.title}</h2>
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus est, cupiditate, id blanditiis provident quae aperiam illo vero quas ut, omnis fugit harum quod accusantium libero veniam? Numquam perspiciatis, asperiores sapiente delectus cum suscipit voluptatum libero architecto nemo at rem, modi recusandae consectetur magni expedita incidunt? Enim eveniet maiores est consequuntur, voluptatibus incidunt corrupti alias quae quia pariatur labore omnis repellendus placeat asperiores ut cupiditate minus cum reiciendis veritatis soluta voluptatum, eum cumque. Maxime ipsam reiciendis natus expedita, consectetur repellat magni dolorem dolorum! Expedita reprehenderit cumque, perferendis incidunt eos, beatae nesciunt explicabo delectus in ex quasi quo quidem</h4>
+          </div>
+        </div>
+		</>
 	)
 }

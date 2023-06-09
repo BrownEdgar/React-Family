@@ -1,4 +1,3 @@
-
 import ReactDOM from 'react-dom/client'
 import App from './users/Zor/lesson-React/React-router-6/App'
 import './index.css'

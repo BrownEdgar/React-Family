@@ -12,7 +12,10 @@ export default function Navbar() {
             <NavLink to={ROUTES.HOME}>HOME</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.ABOUT}>ABOUT</NavLink>
+            <NavLink to={ROUTES.POSTS}>POSTS</NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.ROBOTES}>ROBOTES</NavLink>
           </li>
           <li>
             <NavLink to={ROUTES.ALBUMS}>ALBUMS</NavLink>

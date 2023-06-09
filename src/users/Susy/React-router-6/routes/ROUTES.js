@@ -1,8 +1,8 @@
 const ROUTES = {
   HOME: '/',
-  ABOUT: '/about',
+  POSTS: '/posts',
   BLOG: '/blog',
-  CONTACT: '/contact',
+  NEWPOST: '/newpost',
   404: '*'
 }
 export default ROUTES

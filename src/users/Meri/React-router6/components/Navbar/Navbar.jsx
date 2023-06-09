@@ -21,7 +21,7 @@ export default function Navbar() {
             <NavLink to={ROUTES.ALBUMS}>ALBUMS</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.CONTACT}>Contact</NavLink>
+            <NavLink to={ROUTES.CREATE}>Create</NavLink>
           </li>
         </ul>
       </nav>

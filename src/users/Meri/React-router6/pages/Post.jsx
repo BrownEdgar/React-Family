@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Post() {
   const [post, setPost] = useState({})
@@ -42,6 +43,7 @@ export default function Post() {
         <p>{post.body}</p>
         <div className="edit">
           <button onClick={toggleEdit}>{isEtitable ? 'Cancel' : 'Edit post'}</button>
+          <button><Link to='/posts'>Back</Link></button>
         </div>
       </div>
       {

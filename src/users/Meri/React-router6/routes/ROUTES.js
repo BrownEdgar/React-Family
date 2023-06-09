@@ -3,7 +3,7 @@ const ROUTES = {
 	POSTS: '/posts',
 	ROBOTES: '/robotes',
 	ALBUMS: '/albums',
-	CONTACT: '/contact',
+	CREATE: '/create',
 	404: '*'
 }
 

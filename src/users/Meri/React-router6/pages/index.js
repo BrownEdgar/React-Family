@@ -1,6 +1,6 @@
 export { default as Home } from './Home'
 export { default as Albums } from './Albums'
-export { default as Contact } from './Contact'
+export { default as Create } from './Create'
 export { default as Layouts } from './Layouts'
 export { default as Posts } from './Posts'
 export { default as Post } from './Post'

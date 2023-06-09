@@ -41,7 +41,10 @@
     margin-bottom: 14px;
     border-bottom: 1px solid #000;
 }
-
+.edit {
+    display: flex;
+    justify-content: space-around;
+}
 .post h3 {
     text-align: center;
     color: #222222e1;
@@ -76,7 +79,7 @@ textarea {
 }
 
 .edit-form {
-    animation: dropIn 0.9s forwards;
+    animation: dropIn 2s cubic-bezier(.02,.85,0,.93) 0s alternate both;
 }
 
 .item{
@@ -102,10 +105,11 @@ textarea {
       transform: translateY(-100%);
       opacity: 0;
     }
-    30% {
-        transform: translateY(100%);
+    50%{
+        transform: translateY(70%);
         opacity: 1;
     }
+
     100% {
       transform: translateY(0);
       opacity: 1;

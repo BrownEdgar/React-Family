@@ -3,6 +3,7 @@ const ROUTES = {
 	POSTS: 'posts',
 	BLOG: 'blog',
 	CONTACT: 'contact',
+	LOGIN: 'sign-in',
 	404: '*',
 }
 

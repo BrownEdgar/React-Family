@@ -16,6 +16,12 @@ header {
 			justify-content: space-around;
 			align-items: center;
 			li {
+				&.btn-login {
+					padding: 5px;
+					border-radius: 6px;
+					font-weight: 700;
+					background-color: royalblue;
+				}
 				a {
 					&.active {
 						text-decoration: underline;

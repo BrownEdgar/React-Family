@@ -1,13 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 export default function Posts() {
-	const [posts, setPosts] = useState([])
-	useEffect(() => {
-		axios('http://localhost:3000/posts')
-		    .then(res => setPosts(res.data))
-	}, [])
+	const [posts, setPosts] = useState(useLoaderData())
 
 	const deletePostById = (e, postId) => {
 		e.preventDefault()
@@ -28,4 +24,9 @@ export default function Posts() {
 			}
 		</div>
 	)
+}
+
+export async function fetchPosts() {
+	const response = await axios('http://localhost:3000/posts')
+	return response.data
 }

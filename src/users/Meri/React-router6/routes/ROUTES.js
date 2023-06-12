@@ -4,6 +4,7 @@ const ROUTES = {
 	ROBOTES: '/robotes',
 	ALBUMS: '/albums',
 	CREATE: '/create',
+	LOGIN: '/sign-in',
 	404: '*'
 }
 

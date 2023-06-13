@@ -23,6 +23,12 @@ export default function Navbar() {
           <li>
             <NavLink to={ROUTES.CREATE}>Create</NavLink>
           </li>
+          <li className="btn-login">
+            <NavLink to={ROUTES.LOGIN}>Login</NavLink>
+          </li>
+          <li className="btn-login">
+            <NavLink to={ROUTES.LOGIN}>Logout</NavLink>
+          </li>
         </ul>
       </nav>
     </header>

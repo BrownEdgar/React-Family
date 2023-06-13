@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.aboutDiv {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: initial;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+}
+.aboutDiv .divMap {
+  border: 1px solid rgb(201, 19, 19);
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 10%;
+}
+
+.divAlbum {
+  text-align: center;
+  margin: 15px;
+}
+.divAlbum strong {
+  color: red;
+}/*# sourceMappingURL=index.css.map */

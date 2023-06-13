@@ -1,0 +1,108 @@
+.post-wrapper {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.post-link {
+  width: calc(31% - 10px);
+  margin: 12px;
+  display: inline-block;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  font-size: 20px;
+  position: relative;
+}
+
+.del-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: red;
+  cursor: pointer;
+}
+
+.post,
+.edit-form {
+  padding: 1rem;
+  background: #dedede;
+  border: 1px solid #000;
+  border-radius: 16px;
+  width: 400px;
+  margin: 30px;
+  height: 400px;
+  vertical-align: top;
+  display: inline-block;
+}
+.post h2,
+.edit-form h2 {
+  margin-bottom: 14px;
+  border-bottom: 1px solid #000;
+}
+.post h3,
+.edit-form h3 {
+  text-align: center;
+  font-weight: 600;
+  color: rgb(63, 148, 63);
+  text-transform: uppercase;
+  font-variant: small-caps;
+  font-size: 20px;
+}
+.post input, .post textarea,
+.edit-form input,
+.edit-form textarea {
+  padding: 12px;
+  margin: 10px 0;
+  width: 100%;
+  border: 0;
+}
+.post textarea,
+.edit-form textarea {
+  resize: none;
+}
+
+.create-form {
+  max-width: 800px;
+  margin: 30px auto;
+}
+.create-form form {
+  display: flex;
+  flex-direction: column;
+}
+.create-form form label {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.create-form form input {
+  height: 30px;
+  padding: 5px;
+  font-size: 19px;
+  outline: none;
+}
+.create-form form textarea {
+  resize: none;
+  outline: none;
+  padding: 5px;
+  font-size: 17px;
+}
+.create-form form input[type=submit] {
+  margin: 10px 0;
+  margin-right: auto;
+  padding: 10px;
+  height: auto;
+}/*# sourceMappingURL=App.css.map */0.3s;
+}
+ul li .box__span2 {
+  transform: rotate(45deg);
+}/*# sourceMappingURL=App.css.map */ne;
+     -moz-appearance: none;
+          appearance: none;
+}/*# sourceMappingURL=App.css.map */%;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+textarea {
+  resize: none;
+}/*# sourceMappingURL=App.css.map */

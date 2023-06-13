@@ -24,15 +24,8 @@ export default function CreatePost() {
       url: 'http://localhost:3000/posts',
       data: post
     })
-      .then(() => {
-        setPost({
-          userId: '',
-          id: '',
-          title: '',
-          body: ''
-        });
-      })
-  };
+      .then((res) => console.log(res))
+  }
 
   return (
     <div className='create-item'>

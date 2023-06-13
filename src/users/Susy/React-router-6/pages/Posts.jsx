@@ -22,7 +22,6 @@ export default function Posts() {
 
 	return (
 		<div className='post-wrapper'>
-		
 			{
 				posts.map(post => <Link key={post.id} to={`${post.id}`} className='post-link'>
 					<span className='del-button' onClick={(e) => deletePostById(e, post.id)}>&#10006;</span>

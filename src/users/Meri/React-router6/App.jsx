@@ -1,31 +1,45 @@
-import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import { Route, Routes } from "react-router";
-import ErrorPage from "./pages/404";
+// import Navbar from "./components/Navbar/Navbar";
+import { Home, Posts, Post, Robotes, Robot, Albums, Album, Create, Layouts, ErrorPage} from "./pages";
+import { Route, Routes, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import ROUTES from "./routes/ROUTES";
-import { element } from "prop-types";
-import Contact from "./pages/Contact";
-import Layouts from "./pages/Layouts";
-import Post from "./pages/Post";
-import Albums from "./pages/Albums";
-import Album from "./pages/Album"
+// import { element } from "prop-types";
+
+import './App.scss'
+
+const router = createBrowserRouter(
+	createRoutesFromElements(
+        <Route path={ROUTES.HOME} element={<Layouts/>}>
+          <Route index element={<Home title="Welcome to our amazing site"/>}/>
+          <Route path={ROUTES.ROBOTES} element={<Robotes />}/>
+          <Route path={ROUTES.POSTS} element={<Posts />}/>
+          <Route path={ROUTES.ALBUMS} element={<Albums />}/>
+          <Route path={ROUTES.CREATE} element={<Create />}/>
+          <Route path='robotes/:id' element={<Robot/>} />
+          <Route path='posts/:id' element={<Post/>} />
+          <Route path='albums/:id' element={<Album/>} />
+          <Route path={ROUTES[404]} element={<ErrorPage/>} />
+        </Route>
+	)
+)
 
 export default function App() {
 	return (
 		<div>
-			<Routes>
-				<Route path={ROUTES.HOME} element={<Layouts/>}>
-				  <Route index element={<Home title="Welcome to our amazing site"/>}/>
-				  <Route path={ROUTES.ABOUT} element={<About />}/>
-				  <Route path={ROUTES.ALBUMS} element={<Albums />}/>
-				  <Route path={ROUTES.CONTACT} element={<Contact />}/>
-			      <Route path='about/:id' element={<Post/>} />
-			      <Route path='albums/:id' element={<Album/>} />
-				  <Route path={ROUTES[404]} element={<ErrorPage/>} />
-				</Route>
-			</Routes>
+			<RouterProvider router={router} />
 		</div>
 	)
 }
+
+{/* <Routes>
+    <Route path={ROUTES.HOME} element={<Layouts/>}>
+      <Route index element={<Home title="Welcome to our amazing site"/>}/>
+      <Route path={ROUTES.ROBOTES} element={<Robotes />}/>
+      <Route path={ROUTES.POSTS} element={<Posts />}/>
+      <Route path={ROUTES.ALBUMS} element={<Albums />}/>
+      <Route path={ROUTES.CONTACT} element={<Contact />}/>
+      <Route path='robotes/:id' element={<Robot/>} />
+      <Route path='posts/:id' element={<Post/>} />
+      <Route path='albums/:id' element={<Album/>} />
+      <Route path={ROUTES[404]} element={<ErrorPage/>} />
+    </Route>
+</Routes> */}

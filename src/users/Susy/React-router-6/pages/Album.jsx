@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 
 export default function Post() {
 
@@ -8,8 +8,10 @@ export default function Post() {
   const {id} = useParams()
   useEffect(() => {
     axios(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`)
-    .then(res => setAlbum(res.data))
-  },[id])
+      .then(res => {
+        setAlbum(res.data)
+      })
+  }, [id])
   
   return (
     <div>

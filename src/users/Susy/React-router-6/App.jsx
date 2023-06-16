@@ -1,17 +1,21 @@
-import { Home, Posts, NewPost, Layouts, Post, ErrorPage, Blog } from './pages'
+import { Home, Posts, Layouts, Post, ErrorPage, Blog, Login } from './pages'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import ROUTES from './routes/ROUTES'
 
 import './App.scss'
+import PrivateRoute from './utils/PrivateRoute'
+import { fetchPosts } from './pages/Posts'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 			<Route path={ROUTES.HOME} element={<Layouts />}>
 				<Route index element={<Home title="Welcome to our amazing site" />} />
-				<Route path={ROUTES.POSTS} element={<Posts />} />
+				<Route element={<PrivateRoute />}>
+				<Route path={ROUTES.POSTS} element={<Posts />} loader={fetchPosts} />
+				</Route>
 				<Route path={ROUTES.BLOG} element={<Blog />} />
-				<Route path={ROUTES.NEWPOST} element={<NewPost />} />
-				<Route path='posts/:id' element={<Post />} />
+				<Route path={ROUTES.LOGIN} element={<Login />} />
+				<Route path='posts/:id' element={<Post />}  />
 				<Route path={ROUTES[404]} element={<ErrorPage />} />
 			</Route>
 	)

@@ -19,7 +19,13 @@ export default function Navbar() {
 						<NavLink to={ROUTES.BLOG}>BLOG</NavLink>
 					</li>
 					<li>
-						<NavLink to={ROUTES.NEWPOST}>ADDNEWPOST</NavLink>
+						<NavLink to={ROUTES.CONTACT}>Contact</NavLink>
+					</li>
+					<li className='btn-login'>
+						<NavLink to={ROUTES.LOGIN}>Login</NavLink>
+					</li>
+					<li className='btn-login'>
+						<NavLink to={ROUTES.LOGIN}>Logout</NavLink>
 					</li>
 				</ul>
 			</nav>

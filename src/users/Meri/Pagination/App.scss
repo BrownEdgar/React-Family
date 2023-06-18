@@ -1,0 +1,39 @@
+.container{
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+.person{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+		gap: 16px;
+}
+
+
+.person .info h2 {
+    text-transform: capitalize;
+    color: rgba(255, 0, 0, 0.816);
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+.person .info h1 {
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.913);
+    font-size: 25px;
+    padding-bottom:10px ;
+}
+.person .info p {
+    color: rgba(0, 0, 0, 0.609);
+    font-weight: 900;
+    font-size: 15px;
+}
+.image img {
+    width: 300px;
+		height: 300px;
+		// object-fit: cover;
+    border-radius: 50%;
+		border: 1px solid #000;
+}
+

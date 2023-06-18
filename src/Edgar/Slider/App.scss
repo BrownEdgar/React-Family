@@ -1,79 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
+
+$card-footer-bg-pink: rgb(255, 7, 110);
+$card-footer-bg-orange: rgb(253, 77, 5);
+$card-footer-bg-green: rgb(1, 187, 70);
+$card-footer-bg-darkcyan: darkcyan;
 
 @mixin flexRools() {
-	display: flex;
-	font-family: 'Montserrat', sans-serif;
-	justify-content: center;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bgRools() {
+  height: 210px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App {
-	background: rgb(0, 0, 0);
-	overflow: hidden;
-	background: linear-gradient(45deg, rgba(0, 0, 0, 1) 7%, rgba(58, 59, 59, 1) 100%);
-	width: 100%;
-	height: 100vh;
-	padding-top: 4%;
-	@include flexRools();
+  background: rgb(0, 0, 0);
+  overflow: hidden;
+  background: url("./public/images/background.jpg");
+  width: 100%;
+  height: 100vh;
 
-	&-container {
-	
-		width: 80%;
-		min-height: 550px;
-	}
+  @include flexRools();
+
+  &-container {
+    width: 90%;
+    min-height: 550px;
+  }
 }
 
 .Post {
-	border: 1px solid #fff;
-	border-radius: 1rem;
-	height: 100%;
-	min-height: 450px;
-	margin: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: start;
-	flex-direction: column;
-	overflow: hidden;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-	
-	& > {
-		width: 100%;
-		flex-basis: 100%;
-	}
-	&-image {
-		height: 160px;
-		width: 100%;
-		background-position: center;
-	}
+  border-radius: 1rem;
+  height: 100%;
+  width: 300px;
+  min-height: 500px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba($color: #000, $alpha: 0.9);
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s;
+  }
+  &-image {
+    @include bgRools();
+  }
 
-	&-content {
-		background-color: #fff;
-		padding: 1em;
-		text-align: center;
-		flex-grow: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
+  &-content {
+    background-color: #fff;
+    text-align: center;
+    padding: 0.6em 1em;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-	}
+  &-content h1 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
 
-	&-content h1 {
-		font-size: 28px;
-		margin-bottom: 15px;
-	}
+  &-content p {
+    line-height: 1.4;
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
+  }
 
-		&-content p {
-			line-height: 1.4;
-			color: grey;
-			font-size: 12px;
-		}
+  &-footer {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
-	&-footer {
-		height: 70px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: #F5076A;
-		width: 100%;
-	}
+    &_pink {
+      background-color: $card-footer-bg-pink;
+    }
+    &_orange {
+      background-color: $card-footer-bg-orange;
+    }
+    &_green {
+      background-color: $card-footer-bg-green;
+    }
+    &_darkcyan {
+      background-color: $card-footer-bg-darkcyan;
+    }
+    .Post-stats {
+      color: #fff;
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-basis: 32%;
+        h3 {
+          font-weight: 500;
+          font-size: 22px;
+          margin-bottom: 6px;
+        }
+        p {
+          font-size: 11px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,28 @@
+.App {
+    background-image: url('./public/Rio5.jpg');
+    height: 100vh;
+    background-size: cover;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    &-container {
+      width: 1140px;
+      margin: 0 auto;
+      margin-top: 200px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      &-img  {
+        display: flex !important;
+        justify-content: center;
+        & > img {
+          width: 100%;
+          max-width: 250px;
+          height: auto;
+          margin: 0 10px;
+        }
+      }
+    }
+}

@@ -11,6 +11,7 @@
     "start": "concurrently \"npm run dev\" \"json-server --w db.json\""
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "concurrently": "^8.2.0",
     "formik": "^2.4.0",
@@ -22,9 +23,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-paginate": "^8.2.0",
+    "react-redux": "^8.1.0",
     "react-router": "^6.11.2",
     "react-router-dom": "^6.11.2",
     "react-slick": "^0.29.0",
+    "redux": "^4.2.1",
     "sass": "^1.62.1",
     "server": "^1.0.38",
     "uuid": "^9.0.0",

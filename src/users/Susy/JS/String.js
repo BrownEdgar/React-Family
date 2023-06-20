@@ -1,5 +1,5 @@
 // 1>>>>>>>>>>>>>>>>>>>
-function neArr(array) {
+function newArr(array) {
     let sum = 0;
     for (let i = 0; i < array.length; i++) {
       sum += array[i];
@@ -41,13 +41,12 @@ function replaceFirstThreeA(text) {
 }
 // 8>>>>>>>>>>>>>>>>>>>>>>>>
 function includesAllDigits(text) {
-  const allDigits = /^[0-9]/;
-  return allDigits.test(text);
+  const numbers = [0,1,2,3,4,5,6,7,8,9]
+  return numbers.every(elem => text.include(elem))
 }
 // 9>>>>>>>>>>>>>>>>>>>>>>>>
 function countWords(text) {
-
-	return text.split(' ').length;
+  return text.split(' ').length;
 }
 // 10>>>>>>>>>>>>>>>>>>>>>>>>
 let alphabet = '';

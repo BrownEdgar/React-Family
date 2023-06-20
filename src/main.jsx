@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import App from './users/Vahe/Pageination/App'
+import App from './Edgar/Slider/App'
 import './index.css'
 
 

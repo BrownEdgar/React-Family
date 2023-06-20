@@ -1,5 +1,5 @@
 // 1>>>>>>>>>>>>>>>>>>>
-function neArr(array) {
+function newArr(array) {
     let sum = 0;
     for (let i = 0; i < array.length; i++) {
       sum += array[i];
@@ -9,40 +9,24 @@ function neArr(array) {
   }
 // 2>>>>>>>>>>>>>>>>>>>>>
 function removeVowels(text) {
-    const vowels = ['a', 'e', 'i', 'o', 'u'];
-    let result = '';
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      if (!vowels.includes(char.toLowerCase())) {
-        result += char;
-      }
-    }
-    return result;
+
+	return text.replace(/[aeuio]/g, "");
 }
 // 3>>>>>>>>>>>>>>>>>>>>>
 function removeNums(text){
-    const nums = [1,2,3,4,5,6,7,8,9,0]
-    let result = '';
-    for(let i = 0; i<text.length;i++){
-        const number = text[i]
-        if(isNaN(parseInt(number))){
-            result+=number;
-        }
-    }
-    return result;
+
+	return text.replace(/[0-9]/g, '');
 }
 // 4>>>>>>>>>>>>>>>>>>>>>>>
 function printChangedString(text) {
     const words = text.split(' ');
-    const firstWord = words[0].toUpperCase() ;
-    const changed = firstWord + text.slice(words[0].length);
-  
-    console.log(changed);
+		 words[0] = words[0].toUpperCase() ;
+	return words.join(' ')
 }
 // 5>>>>>>>>>>>>>>>>>>>>>>>
 function printLastWord(text) {
   const words = text.split(' ');
-  const lastWord = words[words.length-1] ;
+  const lastWord = words.at(-1) ;
   console.log(lastWord);
 }
 // 6>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -57,13 +41,12 @@ function replaceFirstThreeA(text) {
 }
 // 8>>>>>>>>>>>>>>>>>>>>>>>>
 function includesAllDigits(text) {
-  const allDigits = /^[0-9]/;
-  return allDigits.test(text);
+  const numbers = [0,1,2,3,4,5,6,7,8,9]
+  return numbers.every(elem => text.include(elem))
 }
 // 9>>>>>>>>>>>>>>>>>>>>>>>>
 function countWords(text) {
-  const words = text.split(' ');
-  return words.length;
+  return text.split(' ').length;
 }
 // 10>>>>>>>>>>>>>>>>>>>>>>>>
 let alphabet = '';

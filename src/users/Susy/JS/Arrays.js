@@ -7,11 +7,7 @@ function checkOnes(array) {
 }
 // 2>>>>>>>>>>>>>>>
 function cleanWord(word) {
-  const symbols = ['@', '!', '(', ')', '[', '<', '>', ']', '{', '}'];
-  symbols.forEach((symbol) => {
-    word = word.split(symbol).join('');
-  });
-  return word;
+  return word.replace(/\W/g,"");
 }
 // 3>>>>>>>>>>>>>>>
 function removeNumberFromArray(array) {
@@ -32,54 +28,27 @@ function findFirstNumberGreaterThan(numbers) {
 }
 // 5>>>>>>>>>>>>>>>>
 function squarePositions(numbers) {
-  const positions = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] = numbers[i] * numbers[i]) {
-      positions.push(i);
+  const d = numbers.map(elem => {
+    if(typeof elem === "number") {
+      return elem * elem
     }
-  }
-  return positions;
+    return elem
+  })
 }
 // 6>>>>>>>>>>>>>>>>>>>>
 function findLongestWordLength(words) {
-  let maxLength = 0;
-  for (let i = 0; i < words.length; i++) {
-    const wordLength = words[i].length;
-    if (wordLength > maxLength) {
-      maxLength = wordLength;
-    }
-  }
-  return maxLength;
+  const x = Math.max(...words.map(elem => elem.length))
 }
 // 7>>>>>>>>>>>>>>>>>>>>>>>
 function checkAndSumNumbers(array) {
-  let sum = 0;
-  let isNumericArray = true;
-
-  for (let i = 0; i < array.length; i++) {
-    if (typeof array[i] !== 'number') {
-      isNumericArray = false;
-      break;
-    }
-    sum += array[i];
-  }
-
-  if (isNumericArray) {
-    console.log(`Sum of numbers: ${sum}`);
-  } else {
-    console.log('The array is not numeric.');
+  const x = array.every(elem => typeof elem === "number")
+  if(x) {
+    array.reduce((a,b) => a + b)
   }
 }
 // 8>>>>>>>>>>>>>>>>>>>>>>>>>
 function findAndPrintFirstString(array) {
-  for (let i = 0; i < array.length; i++) {
-    if (typeof array[i] === 'string') {
-      console.log(`First string found: ${array[i]}`);
-      return;
-    }
-  }
-
-  console.log('No string found in the array.');
+  const x = array.filter(elem => typeof elem === "string")
 }
 // 9>>>>>>>>>>>>>>>>>>>>>>
 function findMiddleNumber(array) {

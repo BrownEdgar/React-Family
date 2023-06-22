@@ -8,10 +8,7 @@ if (!myObject.hasOwnProperty("email")) {
 let object = {
     password: "Abcd1234"
 };
-if (typeof object.password === "string" && /^[A-Z].*\d+$/.test(object.password)) {
-  console.log("Valid value");
-  object.password = "NewPassword123";
-}console.log("Invalid value");
+
 
 // Ստեղծել զանգված մեջը մի քանի օբյեկտներ։ `օր․՝ [ {title: "lorem... ", complited: true}, {...}, {...}]`; Գրել կոդ, որը բոլորի մեջ կավելացնի պատահական եռանիշ `id` հատկություն 
 
@@ -58,7 +55,7 @@ second.greet();
 // Ստեղծել Օբյեկտ, մեջը ավելացնել կամայական հատկություն ԱՅՆՊԵՍ, որ `for` ֆռալուց այն չերևա
 
 let newObj = {};
-newObj.myProperty = "Hello, World!";
+
 
 // ստեղծել օբյեկտ,տպել միայն այն հատկությունների անունները (key),որոնք ԹԻՎ են պարունակում
 
@@ -69,3 +66,18 @@ let objKey = {
 };
 
 let numberProperties = Object.keys(objKey).filter(key => typeof objKey[key] === "number");
+
+
+const player = {
+	name: 'Michael', 
+	surname:'Jordan',
+	age:57,
+	number: 23,
+	points: 32292,
+	password: "secret word",
+	team: 'Chicago Bulls'
+}
+
+for (const key in object) {
+
+}

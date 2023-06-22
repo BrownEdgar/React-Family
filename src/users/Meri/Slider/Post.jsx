@@ -10,6 +10,6 @@ export default function Post({ post }) {
 Post.propTypes = {
     post: PropTypes.shape({
         id: PropTypes.number.isRequired,
-        image: PropTypes.oneOf(['first.jpg','second.jpg','third.jpg','four.jpg','five.jpg','six.jpg'])
-    })
+        image: PropTypes.string.isRequired
+		})
 }

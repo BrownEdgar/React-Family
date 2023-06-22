@@ -1,3 +1,5 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const initialPostValue = [{
 	"userId": 1,
 	"id": 1,
@@ -17,10 +19,4 @@ const initialPostValue = [{
 		"body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
 	}]
 
-export default function postReducer (state = initialPostValue, { type })  {
-	switch (type) {
-
-	default:
-		return state
-	}
-}
+const postSlice = createSlice()

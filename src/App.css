@@ -1,0 +1,14 @@
+button {
+  padding: 12px;
+}
+.specButton {
+  padding: 10px;
+  border: 1px solid red;
+}
+span {
+  padding: 12px;
+  color: red;
+}
+.addButton {
+  border: 1px solid royalblue;
+}

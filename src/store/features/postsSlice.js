@@ -5,7 +5,7 @@ const initialPostValue = [{
 	"id": 1,
 	"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
 	"body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-},
+  },
 	{
 		"userId": 1,
 		"id": 2,
@@ -17,6 +17,20 @@ const initialPostValue = [{
 		"id": 3,
 		"title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
 		"body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
-	}]
+	}
+];
 
-const postSlice = createSlice()
+const postSlice = createSlice({
+  name: "post",
+  initialState: initialPostValue,
+  reducers: {
+    delPost(state, action) {
+      return state.filter(post => post.id !== action.payload)
+    },
+    addPost(state, action) {
+      state.push(action.payload)
+    }
+  }
+})
+export default postSlice.reducer
+export const {delPost ,addPost} = postSlice.actions

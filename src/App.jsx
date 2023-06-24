@@ -13,18 +13,15 @@ export default function App() {
 			body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora soluta quas debitis.',
 			userId: 5
 		}
-
-		dispatch({ type: 'add-post' })
-
+		dispatch(addPost(post))
 	}
+
 	return (
 		<div className="App">
 			<button
 				onClick={addPostAction}
 			>add random post</button>
 			<Posts />
-
-
 		</div>
 	)
 }

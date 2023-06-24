@@ -5,8 +5,9 @@
 }
 .flex{
     display: flex;
-    justify-content: space-around;
+   
     align-items: stretch;
+		align-content: start;
     flex-wrap: wrap;
     gap: 20px;
     background-color: #b19a9a98;
@@ -17,13 +18,14 @@
     color: #fff;
     padding: 1rem;
     border-radius: 14px;
-    flex-grow: 1;
-    flex-basis: 20%;
+    flex: 0 0 32%;
+		width: 30%;
+  
     transition: .3s;
     position: relative;
 }
 .flex-item:hover {
-    background-color: #4c4646;
+    background-color: #bfaeae;
     outline-offset: -10px;
     scale: 1.05;
     transition: .3s;
@@ -31,18 +33,15 @@
 }
 .flex-item > span{
     position: absolute;
-    font-size: 10em;
+    font-size: 5em;
     font-weight: 700;
     bottom: 0px;
     right: 50px;
     z-index: 10;
     padding: 0;
-    color: #70707070;
+    color: #ef8700ce;
 }
-.flex-item > span:hover{
-    color: rgb(206, 206, 206);
-    z-index: -1;
-}
+
 .flex-item h3 {
     position: absolute;
     top: 10px;

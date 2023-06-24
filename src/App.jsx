@@ -8,7 +8,7 @@ export default function App() {
 	const addPostAction = () => {
 		const post = {
 			userId: 1,
-			id: Math.floor(Math.random()*5 + 9),
+			id: Math.floor(Math.random() * 1e6),
 			title: "nesciunt iure omnis dolorem tempora et accusantium",
 			body: "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
 			
@@ -21,6 +21,7 @@ export default function App() {
 			<Posts/>
 			<pre>
 				{JSON.stringify(store,null,1)}
+
 			</pre>
 		</div>
 	)

@@ -1,0 +1,46 @@
+.edit-form {
+  padding: 1em;
+  background:#07182E;
+  border: 1px solid rgba(44, 1, 1, 0.4);;
+  border-radius: 16px;
+  width: 400px;
+  margin: 30px;
+  height: auto;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.edit-form input, textarea {
+  color: black;
+  padding: 6px;
+  background-color: rgba(245, 245, 245, 0.718);
+  margin: 10px 0;
+  width: 100%;
+  border: 0;
+  box-shadow: 5px 5px 5px rgba(107, 100, 100, 0.97);
+}
+
+textarea {
+  resize: none;
+}
+
+.addPost {
+  padding: 12px 20px;
+  font-weight: 900;
+  margin: 10px 0;
+  border: 0;
+  box-shadow: 10px 5px 5px rgb(95, 95, 95);
+  text-align: center;
+  cursor: pointer;
+}
+
+.addUser {
+  padding: 6px;
+  background-color:rgba(248, 248, 248, 0.696) ;
+  margin: 10px 0;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgba(107, 100, 100, 0.571);
+}

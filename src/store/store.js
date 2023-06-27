@@ -35,11 +35,27 @@ const checkPostId = (store) => (next) => (action) => {
 
 }
 
+const checkEmailMiddleWare = (store) => (next) => (action) => {
+	if (action.type === 'users/addUser') {
+		const state = store.getState();
+		const users = state.users;
+		const isExist = users.findIndex(user => user.email === action.payload.email);
+		if (isExist !== -1) {
+			alert('this email is alredy exist')
+			return;
+		}else{
+			next(action)
+		}
+	}else{
+		next(action)
+	}
+}
+
 
 export const store = configureStore({
   reducer: {
     posts: postReducer, 
     users: userReducer,
   },
-  middleware: [myFirstMiddleWare, checkPostId]
+	middleware: [myFirstMiddleWare, checkPostId, checkEmailMiddleWare]
 })

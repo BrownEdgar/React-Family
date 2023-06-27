@@ -1,41 +1,25 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+;
+import {  useDispatch } from 'react-redux';
 import { addUser } from '../store/features/usersSlice';
 
 export default function Users() {
-  const users = useSelector(state => state.users);
+  
   const dispatch = useDispatch()
-  const [userData, setUserData] = useState({
-    name: '',
-    email: '',
-    ability: ''
-  });
 
-  const handleInputChange = (e) => {
-    setUserData({
-      ...userData,
-      [e.target.name]: e.target.value
-    });
-  };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const user = {
       id: Date.now(),
-      name: userData.name,
-      email: userData.email,
-      ability: userData.ability
+      name: e.target.name.value,
+      email: e.target.email.value,
+      ability: e.target.ability.value
     };
     dispatch(addUser(user));
     e.target.reset();
-
-    setUserData({
-      name: '',
-      email: '',
-      ability: ''
-    });
-  };
+  }
 
   return (
     <div>
@@ -44,8 +28,7 @@ export default function Users() {
         <input
           type="text"
           name="name"
-          value={userData.name}
-          onChange={handleInputChange}
+
           placeholder="Name"
           required
         />
@@ -54,8 +37,7 @@ export default function Users() {
         <input
           type="email"
           name="email"
-          value={userData.email}
-          onChange={handleInputChange}
+
           placeholder="Email"
           required
         />
@@ -64,8 +46,7 @@ export default function Users() {
         <input
           type="text"
           name="ability"
-          value={userData.ability}
-          onChange={handleInputChange}
+
           placeholder="Ability"
           required
         />
